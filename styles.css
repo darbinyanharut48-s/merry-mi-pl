@@ -442,6 +442,241 @@ h3 {
     margin-bottom: var(--spacing-md);
 }
 
+/* ========================================
+   SLOGAN – VAPE DOBRANY DLA CIEBIE
+   ======================================== */
+
+/* Strip under the hero banner */
+.slogan-strip {
+    padding: clamp(1.25rem, 3vw, 2rem) 0 clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.slogan-strip-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    max-width: 920px;
+    margin: 0 auto;
+    padding: clamp(0.9rem, 2vw, 1.2rem) clamp(1.25rem, 4vw, 2.75rem);
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    border-radius: var(--radius-full);
+    background:
+        radial-gradient(ellipse at center, rgba(57, 255, 20, 0.16) 0%, rgba(57, 255, 20, 0) 70%),
+        linear-gradient(180deg, #131313 0%, #0b0b0b 100%);
+    box-shadow: 0 0 28px rgba(57, 255, 20, 0.14), inset 0 0 22px rgba(57, 255, 20, 0.06);
+    overflow: hidden;
+    text-align: center;
+}
+
+/* light sweep across the strip */
+.slogan-strip-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.09) 50%, transparent 65%);
+    background-size: 250% 100%;
+    animation: sloganShine 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.slogan-strip-brand {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.slogan-strip-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary-glow);
+}
+
+.slogan-strip-text {
+    font-size: clamp(1.1rem, 3.2vw, 1.9rem);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: clamp(1px, 0.35vw, 4px);
+    text-wrap: balance;
+}
+
+.slogan-strip-text .gradient-text,
+.slogan-banner-title .gradient-text,
+.footer-slogan span {
+    filter: drop-shadow(0 0 14px rgba(57, 255, 20, 0.45));
+}
+
+@keyframes sloganShine {
+    0% {
+        background-position: 150% 0;
+    }
+
+    60%,
+    100% {
+        background-position: -50% 0;
+    }
+}
+
+/* Big stage banner */
+.slogan-banner {
+    padding: var(--spacing-xl) 0 0;
+}
+
+.slogan-banner-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(2.75rem, 7vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+    border: 1px solid rgba(57, 255, 20, 0.22);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    background:
+        linear-gradient(90deg, transparent 10%, rgba(57, 255, 20, 0.75) 50%, transparent 90%) 50% 95% / 70% 1px no-repeat,
+        radial-gradient(ellipse 60% 18% at 50% 95%, rgba(57, 255, 20, 0.22) 0%, rgba(57, 255, 20, 0) 100%),
+        radial-gradient(ellipse 45% 75% at 50% 0%, rgba(57, 255, 20, 0.38) 0%, rgba(57, 255, 20, 0.1) 45%, rgba(57, 255, 20, 0) 75%),
+        linear-gradient(180deg, #0e170e 0%, #070907 60%, #050505 100%);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45), inset 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+/* diagonal neon light lines, same motif as the product stage */
+.slogan-banner-card::before,
+.slogan-banner-card::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -40%;
+    width: 2px;
+    height: 180%;
+    background: linear-gradient(180deg, transparent 15%, var(--color-primary) 50%, transparent 85%);
+    box-shadow: 0 0 16px var(--color-primary), 0 0 36px var(--color-primary-glow);
+    opacity: 0.55;
+    transform: rotate(40deg);
+}
+
+.slogan-banner-card::before {
+    left: 9%;
+}
+
+.slogan-banner-card::after {
+    right: 9%;
+    opacity: 0.4;
+}
+
+.slogan-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--color-primary);
+}
+
+.slogan-eyebrow::before,
+.slogan-eyebrow::after {
+    content: "";
+    width: clamp(28px, 6vw, 64px);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary));
+}
+
+.slogan-eyebrow::after {
+    background: linear-gradient(90deg, var(--color-primary), transparent);
+}
+
+.slogan-banner-title {
+    margin-bottom: var(--spacing-md);
+    font-size: clamp(2.3rem, 8vw, 5.2rem);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: clamp(1px, 0.4vw, 5px);
+    text-shadow: 0 0 40px rgba(57, 255, 20, 0.2);
+}
+
+.slogan-line {
+    display: block;
+}
+
+.slogan-banner-desc {
+    max-width: 620px;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    text-wrap: pretty;
+}
+
+.slogan-banner-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+}
+
+.btn-ghost {
+    background-color: rgba(10, 10, 10, 0.6);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(57, 255, 20, 0.55);
+}
+
+.btn-ghost:hover {
+    transform: scale(1.05);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+/* Footer line */
+.footer-slogan {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--color-text-primary);
+}
+
+.footer-slogan span {
+    color: var(--color-primary);
+}
+
+/* on mobile the last floating card of the hero hangs below the section */
+@media (max-width: 768px) {
+    .slogan-banner {
+        padding-top: 6.5rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .slogan-strip-inner {
+        flex-direction: column;
+        gap: 0.35rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .slogan-strip-dot {
+        display: none;
+    }
+
+    .slogan-strip-brand {
+        font-size: 0.7rem;
+    }
+
+    .slogan-banner-desc {
+        font-size: 0.95rem;
+    }
+
+    .slogan-banner-actions .btn {
+        width: 100%;
+    }
+}
+
 .hero-legacy {
     padding-top: clamp(3rem, 7vw, 5rem);
 }
